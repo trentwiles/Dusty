@@ -8,5 +8,6 @@ $current_links = json_decode(file_get_contents("links.json"), true);
 
 foreach($current_links as $l)
 {
-  echo $l;
+  $info = Embed::create($l);
+  echo $info->title;
 }
