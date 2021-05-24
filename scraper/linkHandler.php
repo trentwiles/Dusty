@@ -2,15 +2,12 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-
-//Get content info
-
 use Embed\Embed;
 
-$info = Embed::create('https://riverside.rocks');
+$current_links = json_decode(file_get_contents("links.json"), true);
 
-#echo $info->title; //The page title
-#echo $info->description; //The page description
-#echo $info->url; //The canonical url
-#echo $info->keywords; //The page keywords
-echo $info->type;
+foreach($current_links as $l)
+{
+  $info = Embed::create($l);
+  echo $info->images . "\n";
+}
