@@ -1,27 +1,32 @@
 <?php
 
 require "../vendor/autoload.php";
-
+header("Content-type: application/json");
 use Embed\Embed;
-
-$q = $_GET["q"];
-
-exec("php DuckDuckGo.php ${q}");
 
 $current_links = json_decode(file_get_contents("links.json"), true);
 
-$titles = [];
+$html = [];
 $urls = [];
 
 
 
 foreach($current_links as $l)
 {
-  $info = Embed::create("https://" . $l);
+  try{
+  	$info = Embed::create("https://" . $l);
+  }catch (exception $e) {
+      #echo $e;
+  }
   //print_r($info->images);
   foreach($info->images as $imgd)
   {
       $img = $imgd["url"];
-      echo "<img src='https://external-hit.riverside.rocks/${img}' />";
+      array_push($html, $img);
+      array_push($urls, "https://${l}");
   }
 }
+
+$final = array("links" => $urls, "images_raw" => $html);
+
+echo json_encode($final);
