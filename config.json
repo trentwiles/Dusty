@@ -1,4 +1,5 @@
 {
   "proxy": "https://external-hit.riverside.rocks",
-  "results_per_page": 15
+  "results_per_page": 15,
+  "host": "http://search.riverside.rocks"
 }
