@@ -1,6 +1,8 @@
 {
     "require": {
         "embed/embed": "3",
-        "imangazaliev/didom": "^1.16"
+        "imangazaliev/didom": "^1.16",
+        "t1gor/robots-txt-parser": "^0.2.5",
+        "bramus/router": "~1.5"
     }
 }
