@@ -4,7 +4,7 @@ require "../vendor/autoload.php";
 
 use DiDom\Document;
 
-$document = new Document('https://html.duckduckgo.com/html/?q=' . $argv[1], true);
+$document = new Document('https://html.duckduckgo.com/html/?q=' . $_POST["q"], true);
 
 $posts = $document->find('.result__url');
 
