@@ -19,3 +19,6 @@ $host = $config["host"];
 
 $options = array('User-agent' => "Dusty (internal)");
 $request = Requests::get('${host}/scraper/DuckDuckGo.php?q=${search}', $options);
+
+?>
+
