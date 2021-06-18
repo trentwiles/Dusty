@@ -1,5 +1,5 @@
 # Dusty
-Image metadata search engine 
+Image search engine 
 
 
 ## The idea
